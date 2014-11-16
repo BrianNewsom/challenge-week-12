@@ -81,12 +81,7 @@ _id":null,"Reviews in Pheonix: ":{"$sum":"$review_count"}}}])
 { "_id" : null, "Reviews in Pheonix: " : 16 }
 16 reviews
 
-## Challenge 6
-
-[Query snippet]
-[Answer]
-
-## Challenge 7 [BONUS]
+## Challenge 6 [BONUS]
 
 [Code]
 [Answer]
