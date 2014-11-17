@@ -20,20 +20,20 @@ As mentioned above, you could learn a lot with NLP to learn how the Reddit commu
 
 ## Challenge 5
 
-[Link to Code or pasted code]
-[Answer]
+[Link to Code or pasted code](reddit/mostSimilar.js)
+I was having some issues with javascript and could not get the concurrency issues fixed in time.  Unfortunately I am not sure, sorry!
 
 ## Challenge 6
 
-[What does this change about our analysis?]
+This would imply that only popular comments were analyzed.  This would skew the way I was attempting to count all the upvotes.  Not counting a bunch of minimally liked comments would skew towards smaller communities with more active communities.
 
 ## Challenge 7
 
-[How would you change your conclusions?]
+My conclusion based on my (not very strong anyway) technique actually probably wouldn't change.  Since they all have ~ the same comments, a larger number of ups likely corresponds to a few comments that are very popular versus the case discussed above.  This is really only true that it wouldn't change because of the way I executed my analysis, generally this is a huge ommision and is important to re-evaluate.
 
 ## Challenge 8
 
-[Bias in answer]
+Only basing similarities on upvotes creates a bias of only caring about popularity of comments in subreddits which ignores content, literacy, etc. This biases towards closer communities and will make them seem similar if they are tight knit.
 
 ## Challenge 9
 

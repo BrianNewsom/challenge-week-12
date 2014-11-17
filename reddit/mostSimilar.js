@@ -21,12 +21,11 @@ sr = ['funny', 'pics', 'AskReddit','todayilearned','worldnews','science','IAmI',
 	'sports','atheism',	'mildlyinteresting','DIY','Fitness','food','space','Jokes','Showerthoughts','photoshopbattles','tifu','GetMotivated','nottheonion',
 	'InternetIsBeautiful','history','dataisbeautiful','Futurology','gadgets','listentothis','nosleep','Documentaries','personalfinance',
 	'philosophy','creepy','Art']
-
 var out = [];
 
 var perRedditLimit = 1;
-
-function run(callback){
+var ups = 0;
+function run(){
 	for (var i = 0; i < sr.length-1 ; i++){
 		MongoClient.connect('mongodb://127.0.0.1/reddit', function (err, db) {
 		    if (err) {
@@ -38,24 +37,24 @@ function run(callback){
 			    "limit": perRedditLimit//,
 			    //"skip": 10,
 				}
-
 			    var cursor = collection.find({"subreddit":sr[i]}, options).toArray(function(err, res){
 			    	if (err) {
 			    		throw err;
 			    	}
 			    	else{
-			    		//console.log(res);
-			    		console.log("appending");
-			    		out.push(res);
-			    	}
 
+			    		console.log(res);
+			    		out.push(res);
+			    		ups = ups + res[0].ups
+			    		console.log(res[0].subreddit + " " + String(ups))
+			    	}
+			    	ups = 0;
 			    	db.close();
 			    });
 			}
 		});
 		
 	}
-	callback(out);
 }
 
 run(function(out) { console.log(out);})
